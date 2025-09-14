@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nihar — Personal Page</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #0f172a;
+      --accent: #7c5cff;
+      --muted: rgba(255,255,255,0.75);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:white;transition:background 0.5s;}
+    body{
+      background: linear-gradient(135deg,var(--bg1) 0%, #a8c3e4 40%, #021428 100%);
+      display:flex;align-items:center;justify-content:center;padding:32px;
+    }
+
+    .card{width:100%;max-width:920px;background:rgba(255,255,255,0.02);border-radius:16px;padding:28px;box-shadow:0 10px 30px rgba(2,6,23,0.6);backdrop-filter: blur(6px);display:grid;grid-template-columns: 1fr 360px;gap:24px;align-items:center;}
+    @media (max-width:880px){.card{grid-template-columns:1fr;max-width:720px}.sidebar{order:2}}
+
+    .hero{padding:12px 6px;}
+    .eyebrow{font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;font-size:12px}
+    h1{margin:8px 0 6px;font-size:48px;line-height:1;letter-spacing:-1px}
+    .subtitle{color:var(--muted);margin-bottom:16px;font-size:16px}
+
+    .actions{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .btn{padding:10px 14px;border-radius:10px;font-weight:600;border:0;cursor:pointer;background:linear-gradient(90deg,var(--accent),#5fd3ff);color:#04101d;transition:transform .2s}
+    .btn:hover{transform:scale(1.05)}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);border-radius:10px;padding:10px 14px}
+
+    .sidebar{padding:18px;border-left:1px solid rgba(255,255,255,0.03);text-align:center}
+    .avatar{width:140px;height:140px;border-radius:50%;object-fit:cover;box-shadow:0 6px 18px rgba(11,22,50,0.6);margin-bottom:14px;transition:transform .3s}
+    .avatar:hover{transform:scale(1.08)}
+
+    .meta{font-size:14px;color:var(--muted)}
+    .meta b{color:white}
+
+    .links{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+    .link{padding:10px;border-radius:10px;background:rgba(255,255,255,0.02);text-decoration:none;color:var(--muted);font-weight:600;border:1px solid rgba(255,255,255,0.03)}
+
+    footer{margin-top:18px;color:rgba(255,255,255,0.6);font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="card" role="main" aria-labelledby="Nihar">
+    <div class="hero">
+      <div class="eyebrow">Hello — I'm</div>
+      <h1 id="nihar-heading">Nihar</h1>
+      <div class="subtitle">A clean, modern single-page HTML + CSS template. Great as a personal landing page or simple portfolio.</div>
+
+      <div class="actions">
+        <button class="btn" onclick="location.href='#contact'">Contact</button>
+        <button class="ghost" onclick="location.href='#about'">About</button>
+        <button class="btn" onclick="sayHello()">Say Hello 👋</button>
+        <button class="btn" onclick="changeColor()">🎨 Change Theme</button>
+      </div>
+
+      <footer id="about">A minimal starting point — change colors, fonts, or layout easily.</footer>
+    </div>
+
+    <aside class="sidebar" aria-label="profile">
+      <a href="https://example.com/myphoto.jpg" target="_blank">
+        <img src="https://uploads.onecompiler.io/43wm8t7fw/43wm8mg2k/PHOTO-2025-05-07-09-47-37%202.jpg" alt="Nihar's Photo" class="avatar">
+      </a>
+      <div>
+        <div style="font-weight:700;font-size:16px">Nihar</div>
+        <div class="meta">Frontend enthusiast • Learner • Creator</div>
+      </div>
+
+      <div class="links">
+        <a class="link" href="#">Download Resume</a>
+        <a class="link" href="#">View Projects</a>
+        <a class="link" href="#contact">Contact Me</a>
+      </div>
+
+      <div style="margin-top:18px;font-size:13px;color:var(--muted)">
+        <strong>Location:</strong>
+        <div class="meta">India</div>
+      </div>
+
+      <div style="margin-top:18px;font-size:13px;color:var(--muted)" id="contact">
+        <strong>Email:</strong>
+        <div class="meta">nmohapara079@gmail.com</div>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    function sayHello(){
+      alert("Hello from Nihar's webpage! 🎉");
+    }
+
+    // 🎨 Change background theme colors randomly
+    function changeColor(){
+      const colors = [
+        "linear-gradient(135deg,#0f172a,#021428)",
+        "linear-gradient(135deg,#143a6f,#6b4bff)",
+        "linear-gradient(135deg,#ff7e5f,#feb47b)",
+        "linear-gradient(135deg,#00c6ff,#0072ff)",
+        "linear-gradient(135deg,#43cea2,#185a9d)"
+      ];
+      const random = colors[Math.floor(Math.random()*colors.length)];
+      document.body.style.background = random;
+    }
+  </script>
+</body>
+</html>
